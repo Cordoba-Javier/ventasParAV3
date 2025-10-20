@@ -1,0 +1,35 @@
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Productos</ion-title>
+      <ion-buttons slot="end">
+        <ion-button routerLink="/products/new"><ion-icon name="add-circle"></ion-icon></ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-searchbar placeholder="Buscar…" (ionInput)="onSearch($event)"></ion-searchbar>
+
+    <ion-refresher slot="fixed" (ionRefresh)="reload($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <ion-list>
+      <ion-item *ngFor="let p of filtered(); trackBy: trackById" [routerLink]="['/products', p.id]">
+        <ion-label>
+          <h2>{{ p.name }}</h2>
+          <p>Precio: {{ p.price | currency:'ARS':'symbol-narrow' }}</p>
+        </ion-label>
+        <ion-note slot="end">Stock: {{ p.stock }}</ion-note>
+        <ion-button fill="clear" color="danger" slot="end" (click)="remove(p, $event)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button routerLink="/products/new"><ion-icon name="add-circle"></ion-icon></ion-fab-button>
+    </ion-fab>
+
+    <ion-toast [isOpen]="toastOpen()" [message]="toastMsg()" duration="2000" (didDismiss)="toastOpen.set(false)"></ion-toast>
+  </ion-content>

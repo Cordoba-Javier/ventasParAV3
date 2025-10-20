@@ -1,0 +1,27 @@
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>{{ isEdit() ? 'Editar' : 'Nuevo' }} Producto</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <form [formGroup]="form" (ngSubmit)="save()" class="ion-padding">
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Nombre</ion-label>
+          <ion-input formControlName="name" placeholder="p.ej. Teclado Mecánico"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Precio</ion-label>
+          <ion-input type="number" formControlName="price"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Stock</ion-label>
+          <ion-input type="number" formControlName="stock"></ion-input>
+        </ion-item>
+      </ion-list>
+      <div class="ion-padding">
+        <ion-button type="submit" [disabled]="form.invalid" expand="block">Guardar</ion-button>
+        <ion-button fill="clear" color="medium" expand="block" (click)="cancel()">Cancelar</ion-button>
+      </div>
+    </form>
+  </ion-content>

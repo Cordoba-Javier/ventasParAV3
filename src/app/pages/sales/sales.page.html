@@ -1,0 +1,20 @@
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Ventas</ion-title>
+      <ion-buttons slot="end">
+        <ion-button routerLink="/sales/new"><ion-icon name="add-circle"></ion-icon></ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list class="ion-padding">
+      <ion-item *ngFor="let s of sales(); trackBy: trackById" [routerLink]="['/sales', s.id]">
+        <ion-label>
+          <h2>{{ s.customer }}</h2>
+          <p>{{ s.date }} — {{ s.items.length }} ítems</p>
+        </ion-label>
+        <ion-note slot="end">Total: {{ s.total | currency:'ARS':'symbol-narrow' }}</ion-note>
+      </ion-item>
+    </ion-list>
+  </ion-content>
