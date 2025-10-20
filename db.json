@@ -1,16 +1,16 @@
 {
   "products": [
     {
-      "name": "Mouse Gamer",
+      "name": "Mouse Game",
       "price": 15,
       "stock": 20,
       "id": "1"
     },
     {
-      "id": "775f",
       "name": "monitor",
-      "price": 23,
-      "stock": 23
+      "price": 77,
+      "stock": 2,
+      "id": "775f"
     }
   ],
   "sales": [
@@ -21,25 +21,38 @@
         {
           "productId": "1",
           "name": "Mouse Gamer",
-          "quantity": 2,
+          "quantity": 1,
           "unitPrice": 15,
-          "subtotal": 30
+          "subtotal": 15
+        },
+        {
+          "productId": "8cc5",
+          "name": "teclado",
+          "quantity": 1,
+          "unitPrice": 55,
+          "subtotal": 55
+        },
+        {
+          "productId": "775f",
+          "name": "monito",
+          "quantity": 1,
+          "unitPrice": 23,
+          "subtotal": 23
         }
       ],
-      "total": 30,
+      "total": 93,
       "id": "1"
     },
     {
-      "id": "7b85",
       "date": "2025-10-20",
       "customer": "Pepe",
       "items": [
         {
           "productId": "1",
           "name": "Mouse Gamer",
-          "quantity": 1,
+          "quantity": 2,
           "unitPrice": 15,
-          "subtotal": 15
+          "subtotal": 30
         },
         {
           "productId": "1",
@@ -49,7 +62,8 @@
           "subtotal": 15
         }
       ],
-      "total": 30
+      "total": 45,
+      "id": "7b85"
     },
     {
       "id": "3179",
@@ -72,6 +86,28 @@
         }
       ],
       "total": 76
+    },
+    {
+      "id": "5015",
+      "date": "2025-10-20",
+      "customer": "juan",
+      "items": [
+        {
+          "productId": "1",
+          "name": "Mouse Game",
+          "quantity": 1,
+          "unitPrice": 15,
+          "subtotal": 15
+        },
+        {
+          "productId": "775f",
+          "name": "monito",
+          "quantity": 1,
+          "unitPrice": 23,
+          "subtotal": 23
+        }
+      ],
+      "total": 38
     }
   ]
 }

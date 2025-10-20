@@ -26,5 +26,10 @@ export const routes: Routes = [
     path: 'sales/:id',
     loadComponent: () => import('./pages/sale-form/sale-form.page').then(m => m.SaleFormPage)
   },
-  { path: '**', redirectTo: 'products' }
+  { path: '**', redirectTo: 'alumno' },
+  {
+    path: 'alumno',
+    loadComponent: () => import('./pages/alumno/alumno.page').then( m => m.AlumnoPage)
+  }
+
 ];

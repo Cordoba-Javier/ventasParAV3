@@ -12,17 +12,21 @@ export class ProductService {
 
   getAll(): Observable<Product[]> {
     //TODO: Implementar método para obtener todos los productos
+    return this.http.get<Product[]>(this.base);
     }
   getById(id: string): Observable<Product> {
     //TODO: Implementar método para obtener un producto por ID
+    return this.http.get<Product>(`${this.base}/${id}`);
   }
   create(body: Product): Observable<Product> {
      //TODO: Implementar método para crear un nuevo producto
+     return this.http.post<Product>(this.base, body);
     }
   update(id: string, body: Product): Observable<Product> {
     return this.http.put<Product>(`${this.base}/${id}`, body);
   }
   delete(id: string): Observable<void> {
     //TODO: Implementar método para eliminar un producto por ID
+    return this.http.delete<void>(`${this.base}/${id}`);
   }
 }

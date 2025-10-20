@@ -23,5 +23,7 @@ export class SalesPage {
   constructor() { this.load(); }
 
   load() { // TODO: Cargar las ventas desde el servicio}
-  trackById = (_: number, s: Sale) => s.id!;
+    this.svc.getAll().subscribe(sales => this.sales.set(sales));
+  }
+  trackById = (_: number, s: Sale) => s.id!; 
 }
